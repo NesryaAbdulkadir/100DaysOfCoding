@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Itim&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.logo {
+  font-family: pacifico;
+}
+.navItems,
+.menuItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: montserrat;
+  gap: 1rem;
+}
+.item {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+li {
+  list-style: none;
+}
+.button {
+  background-color: black;
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.item::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+}
+.item:hover::before {
+  width: 100%;
+}
+.mobileMenu {
+  display: none;
+}
+
+@media screen and (max-width: 769px) {
+  .menuItems {
+    display: none;
+  }
+  .mobileMenu {
+    display: block;
+  }
+  #mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+}
